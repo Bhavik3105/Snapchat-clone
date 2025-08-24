@@ -1,0 +1,263 @@
+:root {
+  --snapchat-yellow: #FFFC00;
+  --snapchat-yellow-light: #FFD700;
+  --snapchat-black: #121212;
+  --snapchat-white: #fff;
+  --snapchat-red: #FF6B6B;
+  --snapchat-red-dark: #FF5722;
+  --gray-light: #F0F0F0;
+  --gray-medium: #999;
+  --gray-bg: #FAFAFA;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, var(--snapchat-yellow) 0%, var(--snapchat-yellow-light) 100%);
+  min-height: 100vh;
+}
+
+.snapchat-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.snapchat-logo {
+  margin-bottom: 16px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.app-title {
+  color: var(--snapchat-white);
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  letter-spacing: 1px;
+}
+
+.form-container {
+  background: var(--snapchat-white);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid var(--gray-light);
+  border-radius: 50px;
+  font-size: 16px;
+  background: var(--gray-bg);
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--snapchat-yellow);
+  background: var(--snapchat-white);
+  box-shadow: 0 0 0 3px rgba(255, 252, 0, 0.1);
+}
+
+.input-field::placeholder {
+  color: var(--gray-medium);
+  font-weight: 500;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--snapchat-red) 0%, var(--snapchat-red-dark) 100%);
+  color: var(--snapchat-white);
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 24px 0 16px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+.secondary-btn {
+  width: 100%;
+  padding: 16px;
+  background: transparent;
+  color: var(--snapchat-black);
+  border: 2px solid #E0E0E0;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: #F5F5F5;
+  border-color: var(--snapchat-yellow);
+}
+
+.forgot-password {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.terms-text {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  line-height: 1.4;
+  margin: 20px 0;
+}
+
+.link {
+  color: #007AFF;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: var(--gray-medium);
+  font-size: 14px;
+}
+
+.divider:before,
+.divider:after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #E0E0E0;
+}
+
+.divider span {
+  padding: 0 16px;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .snapchat-container {
+    padding: 16px;
+  }
+
+  .form-container {
+    padding: 30px 20px;
+  }
+
+  .app-title {
+    font-size: 24px;
+  }
+}
+
+/* Form headers */
+h2 {
+  color: var(--snapchat-black);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.5px;
+}
+
+/* Message styling */
+.msg {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  color: var(--snapchat-black);
+}
+
+/* Success message */
+.msg.success {
+  background: #d1edff;
+  border-color: #0066cc;
+  color: #0066cc;
+}
+
+/* Error message */
+.msg.error {
+  background: #ffe6e6;
+  border-color: #ff4444;
+  color: #cc0000;
+}
+
+/* Form styling */
+form {
+  width: 100%;
+}
+
+/* Legacy compatibility - hide these old styles */
+h1 {
+  color: var(--snapchat-black);
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
