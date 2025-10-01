@@ -41,7 +41,10 @@ export default function RegisterForm() {
             {msg && <div className="msg">{msg}</div>}
             
             <div className="terms-text">
-                By tapping Register, you accept our <a href="#" className="link">Terms of Service</a> and <a href="#" className="link">Privacy Policy</a>
+                By tapping Register, you accept our
+                <button type="button" className="link" onClick={() => {}}> Terms of Service</button>
+                and
+                <button type="button" className="link" onClick={() => {}}> Privacy Policy</button>
             </div>
         </form>
     );

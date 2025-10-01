@@ -41,7 +41,9 @@ export default function LoginForm() {
             {msg && <div className="msg">{msg}</div>}
             
             <div className="forgot-password">
-                <a href="#" className="link">Forgot your password?</a>
+                <button type="button" className="link" onClick={() => {}}>
+                    Forgot your password?
+                </button>
             </div>
         </form>
     );
