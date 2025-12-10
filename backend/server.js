@@ -35,6 +35,12 @@ app.use('/api', authRoutes);
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
+// Validate MONGO_URI early for clearer Render logs
+if (!MONGO_URI || !/^mongodb(\+srv)?:\/\//.test(MONGO_URI)) {
+  console.error('Missing or invalid MONGO_URI. Expected it to start with "mongodb://" or "mongodb+srv://"');
+  process.exit(1);
+}
+
 mongoose.connect(MONGO_URI)
   .then(() => {
     console.log('MongoDB connected');
